@@ -1,0 +1,11 @@
+# Object files
+*.o
+
+# Kernel binary / ISO
+*.bin
+*.iso
+
+# IDE / editor files
+*~
+*.swp
+*.kate-swp
