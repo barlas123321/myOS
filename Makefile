@@ -1,9 +1,9 @@
 
-GPPPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore
+GPPPARAMS = -m32 -fno-use-cxa-atexit -nostdlib -fno-builtin -fno-rtti -fno-exceptions -fno-leading-underscore -fno-stack-protector
 ASPARAMS = --32
 LDPARAMS = -melf_i386
 
-objects = loader.o kernel.o
+objects = loader.o gdt.o kernel.o
 
 %.o: %.cpp
 	g++ $(GPPPARAMS) -o $@ -c $<
@@ -34,3 +34,5 @@ mykernel.iso: mykernel.bin
 run: mykernel.iso
 	(killall VBoxManage) || true
 	VBoxManage startvm "myOS" --type gui &
+clean:
+	rm -f *.o *.bin *.iso
