@@ -38,12 +38,6 @@ make run
 qemu-system-i386 -cdrom mykernel.iso
 ```
 
-## Project Structure
-- kernel.cpp      - C++ kernel source
-- loader.s        - Assembly bootloader
-- linker.ld       - Linker script
-- Makefile        - Build system \
-
 *Note: Generated files like .o, .bin, .iso are ignored in the repository (.gitignore).*
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
